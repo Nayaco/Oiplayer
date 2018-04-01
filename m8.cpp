@@ -10,7 +10,7 @@ int w[maxn],v[maxn],l[maxn],r[maxn];
 long long pre_n[maxn],pre_v[maxn];
 long long Y,s,sum;
 int n,m,mx=-1,mn=2147483647;
-bool check(int W)
+bool checker(int W)
 {   
     Y=0,sum=0;
     memset(pre_n,0,sizeof(pre_n));
@@ -46,7 +46,7 @@ int main(){
     while(left<=right)
     {
         mid=(left+right)>>1;
-        if(check(mid))  left=mid+1;
+        if(checker(mid))  left=mid+1;
         else right=mid-1;
         if(sum<ans) ans=sum;
     }

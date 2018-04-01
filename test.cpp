@@ -5,5 +5,6 @@ int main(){
             printf("%d\n",(i-j)%5%3+(i-j)%5);
         }
     }
+    printf("\n%d",-((1<<31)+1));
     return 0;
 }
