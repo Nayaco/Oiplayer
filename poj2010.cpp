@@ -19,7 +19,7 @@ int n, c, f;
 int main(){
     scanf("%d%d%d", &n, &c, &f);
     for(int i = 0; i < c; i++){
-        scanf("%d%d", &a[i].x, &a[i].y);
+        scanf("%d%d", &a[i].x, &    a[i].y);
     }
     sort(a,a+c,cmp);
     {
