@@ -11,7 +11,7 @@ const int maxm = 300005;
 int Vis[maxn], v[maxm], Head[maxn], Next[maxn], Dep[maxn], Flow[maxm], Cap[maxm];
 int tot, n, m;
 
-void add(int a, int b, int _Cap){
+void Add(int a, int b, int _Cap){
     v[++tot] = b;Next[tot] = Head[a];Head[a] = tot;Cap[tot] = _Cap;Flow[tot] = 0;
     v[++tot] = a;Next[tot] = Head[b];Head[b] = tot;Cap[tot] = 0;Flow[tot] = 0;
 }

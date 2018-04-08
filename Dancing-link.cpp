@@ -76,8 +76,6 @@ bool DANCE(int i){
         for(int k = MAP[j].R; k != j; k = MAP[k].R)DELETE(COL[k]);
     }
     REUSE(i);
-    //for(int i=1;i<=NUM;i++)cout<<MAP[i].U<<' '<<MAP[i].D<<' '<<MAP[i].L<<' '<<MAP[i].R<<endl;
-    //    printf("------------------\n");
     return 0;
 }
 void init(int n){

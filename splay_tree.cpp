@@ -96,16 +96,61 @@ void up(Tree &root, Tree node){
 
 void splay(Tree &root, Tree node){
     while(node!=root->lc&& node!= node){
+        up(root ,node);
+    }
+    if(root->lc == node)r_single_rotate()
+    //...
+}
 
+void insert(){
+    temp = search()
+    if(null){
+        //add node
     }
 }
 
-
-int search(){
-
+Tree *findmin(Tree &root){
+    //find lc or return root
+}
+void remove(root, val){
+    temp = search_val(,val,)
+    if(temp){
+        if(!=root)splay(root, temp)
+        if(root->lc){
+            r = findmin(root->lc)
+            //replace
+            if((*r)->lc==null){
+                r2 = r
+                r = r->rc
+                delete r2
+            }
+            else if(rc == null){
+                ..
+                r = r->lc
+                delete .. 
+            }
+        }else{
+            r2 = root
+            r = r->lc
+            delete r2
+        }
+    }
+}
+int search(Tree &root, elementType val){
+    Tree parent = NULL;
+    Tree *temp = NULL;
+    temp = search_val(root, val, parent);
+    if(*temp && *temp!=root){
+        splay(root, *temp);
+        return 1;
+    }
+    return 0;
 }
 
-Tree search_val(int val){
-
+Tree search_val(Tree &root, elementType val, Tree &parent){
+    //...nothing new
 }
+
+
+
 
