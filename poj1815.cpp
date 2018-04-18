@@ -6,18 +6,20 @@
 #define max(x, y) (x>y?x:y)
 #define min(x,y) (x>y?y:x)
 using namespace std;
-const int maxn = 100005;
-const int maxm = 300005;
+const int maxn = 2005;
+const int maxm = 1000005;
 
 int Vis[maxn], v[maxm], Head[maxn], Next[maxn], Dep[maxn], Flow[maxm], Cap[maxm];
-int tot, n, m;
+int tot, n, m, s, t;
 
-void Add(int a, int b, int _Cap){
+void Add(int a, int b, int _Cap)
+{
     v[++tot] = b;Next[tot] = Head[a];Head[a] = tot;Cap[tot] = _Cap;Flow[tot] = 0;
     v[++tot] = a;Next[tot] = Head[b];Head[b] = tot;Cap[tot] = 0;Flow[tot] = 0;
 }
 
-int Bfs(int s, int t){
+int Bfs(int s, int t)
+{
     memset(Vis, 0 ,sizeof(Vis));
     queue<int> Q;
     Q.push(s);
@@ -36,7 +38,8 @@ int Bfs(int s, int t){
     return Vis[t];
 }
 
-int Dfs(int u, int t, int a){
+int Dfs(int u, int t, int a)
+{
     if(u == t){
         return a;
     }
@@ -57,7 +60,8 @@ int Dfs(int u, int t, int a){
     return fl;
 }
 
-int dinic(int s, int t){
+int dinic(int s, int t)
+{
     int fl = 0;
     while(Bfs(s, t)){
         fl += Dfs(s, t, INF);
@@ -65,4 +69,24 @@ int dinic(int s, int t){
     return fl;
 }
 
-int main(){return 0;}
+int main()
+{
+    int temp;
+    scanf("%d%d%d", &n, &s, &t);
+    for(int i = 0; i < n; i++)Add(i+1, i+1+n, 1);
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            scanf("%d", &temp);
+            if(temp && i != j){
+                Add(i+1, j+1+n, 1);
+                if(i+1 == s && j+1 == t){
+                    printf("NO ANSWER!\n");
+                    return 0;
+                }
+            }
+        }
+    }
+    int _Ans = dinic(s, t);
+    printf("%d", );
+    return 0;
+}
