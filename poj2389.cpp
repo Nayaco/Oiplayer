@@ -4,6 +4,7 @@
 #include <cstring>
 #include <cstdlib>
 using namespace std;
+
 const int maxn = 100005;
 const double PI = 3.14159265358979;
 typedef complex<double> cd;
@@ -45,12 +46,12 @@ void fft(cd *a, int n, int dft){
     }
 }
 
+int n, m;
+int l1, l2;
+int _temp;
+int ans[maxn];
+char _s[maxn];
 int main(){
-    char _s[maxn];
-    int ans[maxn];
-    int n, m;
-    int l1, l2;
-    int _temp;
     cd a[maxn], b[maxn];
     scanf("%s", _s);
     l1 = strlen(_s);
